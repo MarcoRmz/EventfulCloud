@@ -1,4 +1,37 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script type="text/javascript">
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(40.0047528, -75.118033);
+  var mapOptions = {
+    zoom: 14,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+
+function codeAddress() {
+  var address = document.getElementById('address').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+      var elem = document.getElementById('address');
+      elem.value = results[0].formatted_address;
+    } else {
+      alert('Could not get location: ' + status);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
 
 <form id="upload" class="registration_form login_left"">
 <div class="outer">
@@ -25,8 +58,7 @@
   <div>
     <h2>Event Location</h2>
     <input type="text" name="address" placeholder="e.g. NY">
-    <input type="button" value="Geocode" onclick="codeAddress()">
-    <p align="left">Enter location: <br/> </p>
+    <input type="button" value="Set Location" onclick="codeAddress()">
     <div id="map-canvas"></div>
   </div>
 </div>
@@ -35,37 +67,3 @@
 <script type="text/javascript">
   new Uploader({ el: "#upload" });
 </script>
-
-<script type="text/javascript">
-var geocoder;
-var map;
-function initialize() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(40.0047528, -75.118033);
-  var mapOptions = {
-    zoom: 14,
-    center: latlng
-  }
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
-
-function codeAddress() {
-  var address = document.getElementById('address').value;
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-      var elem = document.getElementById("address");
-      elem.value = results[0].formatted_address;
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
