@@ -35,6 +35,8 @@ Uploader = Backbone.View.extend({
             "name": parseFile.name()
           },
           title: self.$("[name=title]").val(),
+          startDate: self.$("[name=startDate]").val(),
+          endDate: self.$("[name=endDate]").val(),
           descr: self.$("[name=descr]").val(),
           schedule: self.$("[name=schedule]").val(),
           email: self.$("[name=email]").val()
