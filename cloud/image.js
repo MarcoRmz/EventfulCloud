@@ -7,6 +7,7 @@ var Image = Parse.Object.extend({
     var title = this.get('title') || "Untitled";
     return title;
   }
+
 });
 
 module.exports = function() {

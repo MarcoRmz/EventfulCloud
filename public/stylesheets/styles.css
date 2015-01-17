@@ -343,6 +343,11 @@ h1 {
     text-transform: lowercase;
     -webkit-text-stroke: 0.5px;
 }
+h1 {
+    font-size: 1.8em;
+    color: #fff;
+    /*text-transform: capitalize;*/
+}
 h2 {
     font-size: 1.8em;
     color: #222;
