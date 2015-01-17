@@ -343,9 +343,9 @@ h1 {
     text-transform: lowercase;
     -webkit-text-stroke: 0.5px;
 }
-h2.style{
+h2 {
     font-size: 1.8em;
-    color: #5e5e5e;
+    color: #222;
     /*text-transform: capitalize;*/
 }
 h4.style{
@@ -356,11 +356,12 @@ h4.style{
     padding: 1% 2%;
 }
 .login_left{
-    float: left;
-    width: 44.33333%;
-    margin-left: 3.3333%;
+    position: relative;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
     background: #ffffff;
-    padding: 2%;
+    padding: 1%;
     min-height: 350px;
 }
 .login_left:first-child{
@@ -451,7 +452,7 @@ h4.style{
 .registration_form input[type="text"],.registration_form input[type="email"],.registration_form input[type="tel"],.registration_form input[type="password"]{
     padding: 10px;
     display: block;
-    width: 95.333333%;
+    width: 99%;
     outline: none;
     font-family: 'Maven Pro', sans-serif;
     font-size: 0.8925em;
@@ -471,6 +472,12 @@ h4.style{
     -moz-box-shadow: inset -1px -1px 1px rgba(228, 228, 228, 0.67);
     -o-box-shadow: inset -1px -1px 1px rgba(228, 228, 228, 0.67);
 }
+
+.descr {
+  height: 100px;
+  vertical-align: top;
+}
+
 .sky_form ul li{
     display:inline-block;
     line-height: 1.5em;
