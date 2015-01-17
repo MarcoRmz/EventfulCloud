@@ -32,6 +32,7 @@ module.exports = function() {
       image.set("endDate", req.body.endDate);
       image.set("email", req.body.email);
       image.set("schedule", req.body.schedule);
+      image.set("location", req.body.location);
 
 
       // Set up the ACL so everyone can read the image

@@ -40,6 +40,7 @@ Uploader = Backbone.View.extend({
           descr: self.$("[name=descr]").val(),
           schedule: self.$("[name=schedule]").val(),
           email: self.$("[name=email]").val()
+          address: self.$("[name=address]").val()
         }, function(data) {
           window.location.href = "/i/" + data.id;
         });
@@ -51,9 +52,6 @@ Uploader = Backbone.View.extend({
     return false;
   }
 });
-
-
-
 
 $(function() {
   // Make all of special links magically post the form
