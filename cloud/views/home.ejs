@@ -57,6 +57,8 @@ function codeAddress() {
           map: map,
           position: results[0].geometry.location
       });
+      var elem = document.getElementById("address");
+      elem.value = results[0].formatted_address;
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }

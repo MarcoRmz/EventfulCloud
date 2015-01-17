@@ -39,7 +39,9 @@ Uploader = Backbone.View.extend({
           endDate: self.$("[name=endDate]").val(),
           descr: self.$("[name=descr]").val(),
           schedule: self.$("[name=schedule]").val(),
-          email: self.$("[name=email]").val()
+          email: self.$("[name=email]").val(),
+          address: self.$("[name=address]").val()
+
         }, function(data) {
           window.location.href = "/i/" + data.id;
         });
