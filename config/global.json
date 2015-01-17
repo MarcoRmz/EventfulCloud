@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "eventMngr"
+        }, 
+        "eventMngr": {
+            "applicationId": "dB1ANk1pqDccOoQnapFUnF78V2Sfvb0koKE16RC5", 
+            "masterKey": "fBxYC2cKAAKYqLkktuLaNDXb2gSBktbZ5ZirgkaE"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.3"
+    }
+}

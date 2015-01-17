@@ -1,0 +1,38 @@
+
+<form id="eventInfo" class="registration_form login_left">
+<div class="outer">
+  <div>
+    <h1>Event Info</h1>
+    <p align="left">Event name:<br/> <input type="text" name="name" placeholder="e.g. Hackathon"><br></p>
+    <p>Event start date: <input type="text" id="datepicker"></p>
+    <p>Event end date: <input type="text" id="datepicker2"></p>
+    <p align="left">Event Description:<br/> <input type="text" name="description" placeholder="e.g. Hackathon is the greatest hackathon"><br></p>
+    <p align="left">Schedule:<br/> <input type="text" name="uname" placeholder="e.g. 9:00am Registration"><br></p>
+    <p align="left">Contact email: <br/> <input type="text" name="mail" placeholder="e.g. john@gmail.com"><br></p>
+  </div>
+</div>
+</form>
+
+<form id="upload" class="registration_form login_left">
+<div class="outer">
+  <div>
+    <h1>Upload Event Map</h1>
+    <input type="text" name="title" placeholder="Untitled" />
+    <input type="file" />
+  </div>
+  <a href="#" class="upload">Select image</a>
+</div>
+</form>
+
+<script type="text/javascript">
+new Uploader({ el: "#upload" });
+</script>
+
+<h2>Latest</h2>
+<div id="image_list">
+  <% _(images).each(function(image) { %>
+    <div>
+      <a href="/i/<%= image.id %>"><img src="<%= image.get('sizeSmall').url() %>" /></a>
+    </div>
+  <% }); %>
+</div>
