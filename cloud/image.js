@@ -21,6 +21,11 @@ module.exports = function() {
       var image = new Image();
       image.set("sizeOriginal", req.body.file);
       image.set("title", req.body.title);
+      image.set("description", req.body.descr);
+      image.set("startDate", req.body.startDate);
+      image.set("endDate", req.body.endDate);
+      image.set("mail", req.body.mail);
+      
 
       // Set up the ACL so everyone can read the image
       // but only the owner can have write access
