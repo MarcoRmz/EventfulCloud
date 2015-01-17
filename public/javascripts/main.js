@@ -55,8 +55,6 @@ Uploader = Backbone.View.extend({
 });
 
 
-
-
 $(function() {
   // Make all of special links magically post the form
   // when it has a particular data-action associated
