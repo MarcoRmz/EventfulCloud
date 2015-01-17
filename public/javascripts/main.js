@@ -34,7 +34,10 @@ Uploader = Backbone.View.extend({
             "url": parseFile.url(),
             "name": parseFile.name()
           },
-          title: self.$("[name=title]").val()
+          title: self.$("[name=title]").val(),
+          descr: self.$("[name=descr]").val(),
+          schedule: self.$("[name=schedule]").val(),
+          email: self.$("[name=email]").val()
         }, function(data) {
           window.location.href = "/i/" + data.id;
         });

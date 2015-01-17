@@ -6,8 +6,10 @@ var Image = Parse.Object.extend({
   title: function() {
     var title = this.get('title') || "Untitled";
     return title;
+  },
+  email: function() {
+    return "foo";
   }
-
 });
 
 module.exports = function() {
@@ -18,8 +20,11 @@ module.exports = function() {
 
   // Creates a new image
   app.post('/', function(req, res) {
+
     if (req.body.file) {
       var image = new Image();
+
+
       image.set("sizeOriginal", req.body.file);
       image.set("title", req.body.title);
       image.set("descr", req.body.descr);
