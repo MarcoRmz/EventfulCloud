@@ -21,7 +21,7 @@ module.exports = function() {
       var image = new Image();
       image.set("sizeOriginal", req.body.file);
       image.set("title", req.body.title);
-      image.set("description", req.body.descr);
+      image.set("descr", req.body.descr);
       image.set("startDate", req.body.startDate);
       image.set("endDate", req.body.endDate);
       image.set("email", req.body.email);
@@ -72,7 +72,7 @@ module.exports = function() {
     query.find().then(function(objects) {
       res.render('image/list', {
         images: objects,
-        title: "My Images"
+        title: "My Events"
       });
     });
   });
@@ -88,7 +88,7 @@ module.exports = function() {
     
     query.find().then(function(objects) {
       if (objects.length === 0) {
-        res.send("Image not found");
+        res.send("Event not found");
       } else {
         var image = objects[0];
 
@@ -100,14 +100,14 @@ module.exports = function() {
           res.render('image/show', {
             image: image,
             size: 'sizeNormal',
-            title: image.title()
+            title: image.title(),
           });
         }, function(error) {
           res.send("Error: " + error);
         });
       }
     }, function(error) {
-      res.send("Image not found");
+      res.send("Event not found");
     });
   });
 
