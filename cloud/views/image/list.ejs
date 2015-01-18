@@ -8,7 +8,6 @@
    <% _(images).each(function(image) { %>
      <div>
        <a href="/i/<%= image.id %>"><img src="<%= image.get('sizeSmall').url() %>" /></a>
-       <p style="text-align: center;"><%= image.get('title') %></p>
      </div>
    <% }); %>
 <% } %>
