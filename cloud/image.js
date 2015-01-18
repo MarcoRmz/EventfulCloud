@@ -87,6 +87,7 @@ module.exports = function() {
 
   // Shows one image
   app.get('/:id', function(req, res) {
+    var query = new Parse.Query(Image);
     var id = req.params.id;
 
     // Build the query to find an image by id
