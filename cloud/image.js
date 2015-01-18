@@ -7,6 +7,9 @@ var Image = Parse.Object.extend({
     var title = this.get('title') || "Untitled";
     return title;
   },
+  email: function() {
+    return "foo";
+  }
 });
 
 module.exports = function() {
@@ -127,7 +130,6 @@ module.exports = function() {
       image.add("schedule", scheduleItem);
       image.save().then(function(image) {
         res.redirect('/i/'+id);
-
       });
 
     });
