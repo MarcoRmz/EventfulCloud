@@ -87,7 +87,7 @@ h1 {
 
 /* line 28, ../../sass/styles.scss */
 #content {
-  width: 75%;
+  width: 950px;
   margin: auto;
 }
 
@@ -207,7 +207,7 @@ h1 {
 /* line 148, ../../sass/styles.scss */
 #main .right_panel {
   float: right;
-  width: 25%;
+  width: 250px;
 }
 /* line 152, ../../sass/styles.scss */
 #main .right_panel input {
@@ -215,7 +215,7 @@ h1 {
   background: #d4dae0;
   padding: 4px;
   display: block;
-  width: 70%;
+  width: 200px;
   margin-bottom: 7px;
 }
 /* line 162, ../../sass/styles.scss */
@@ -227,12 +227,11 @@ h1 {
 /* line 170, ../../sass/styles.scss */
 #upload {
   text-align: center;
-  margin: auto;
 }
 /* line 173, ../../sass/styles.scss */
 #upload .outer {
   text-align: left;
-  width: 90%;
+  width: 400px;
   margin: auto;
 }
 /* line 179, ../../sass/styles.scss */
