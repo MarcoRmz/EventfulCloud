@@ -1,17 +1,9 @@
 <div class="right_panel">
 
-  <div class="outer">
-    <h1>Schedule</h1>
-    <br>
-    <a href="/schedule">Set Schedule</a>
-    <p><%= image.get('schedule') %></p>
-    <form class="registration_form login_left" method="post" action="/i/add_schedule_item/<%= image.id %>">
-      <div class="outer">
-          <p align="left">Schedule: <br/><input type="text" name="schedule" placeholder="9:00am Registration"></p>
-          <input type="submit" value="Add" >
-      </div>
-    </form>
-  </div>
+  <h1>Schedule</h1>
+  <br>
+  <p><%= image.get('schedule') %></p>
+  
   
 </div>
 
@@ -35,13 +27,4 @@
     var el = $(e.target);
     el.select();
   });
-</script>
-
-<script>
-  function submit() {
-    var elem = document.getElementById("schedule");
-    image.add("schedule", "elem.value");
-    image.save();
-    //window.location.href = "/i/" + image.objectId;
-  }
 </script>
