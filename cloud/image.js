@@ -119,5 +119,22 @@ module.exports = function() {
     });
   });
 
+  app.post('/add_schedule_item/:id', function(req, res) {
+    var id = req.params.id;
+    var scheduleItem = req.body.schedule;
+
+    var query = new Parse.Query(Image);
+    query.equalTo("objectId", id);
+    query.find().then(function(objects) {
+      var image = objects[0];
+      image.add("schedule", scheduleItem);
+      image.save().then(function(image) {
+        res.redirect('/i/'+id);
+      });
+
+    });
+  });
+
   return app;
 }();
+

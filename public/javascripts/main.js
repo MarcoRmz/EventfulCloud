@@ -43,6 +43,7 @@ Uploader = Backbone.View.extend({
           address: self.$("[name=address]").val()
 
         }, function(data) {
+
           window.location.href = "/i/" + data.id;
         });
       });
