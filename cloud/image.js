@@ -7,9 +7,6 @@ var Image = Parse.Object.extend({
     var title = this.get('title') || "Untitled";
     return title;
   },
-  email: function() {
-    return "foo";
-  }
 });
 
 module.exports = function() {
@@ -87,7 +84,6 @@ module.exports = function() {
 
   // Shows one image
   app.get('/:id', function(req, res) {
-    var query = new Parse.Query(Image);
     var id = req.params.id;
 
     // Build the query to find an image by id
@@ -120,5 +116,23 @@ module.exports = function() {
     });
   });
 
+  app.post('/add_schedule_item/:id', function(req, res) {
+    var id = req.params.id;
+    var scheduleItem = req.body.schedule;
+
+    var query = new Parse.Query(Image);
+    query.equalTo("objectId", id);
+    query.find().then(function(objects) {
+      var image = objects[0];
+      image.add("schedule", scheduleItem);
+      image.save().then(function(image) {
+        res.redirect('/i/'+id);
+
+      });
+
+    });
+  });
+
   return app;
 }();
+
